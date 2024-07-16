@@ -1,0 +1,138 @@
+@import "../../style.scss";
+
+
+.profile {
+
+    .images {
+        width: 100%;
+        height: 300px;
+        position: relative;
+
+        .cover {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profilePic {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
+            top: 200px;
+        }
+    }
+
+
+
+
+
+
+
+    .profileContainer {
+        display: flex;
+        flex-direction: column;
+        padding: 20px 70px;
+
+        @include mobile {
+            padding: 10px;
+        }
+
+
+
+        .uInfo {
+            height: 200px;
+            -webkit-box-shadow: 6px 4px 21px 0px rgba(173, 170, 173, 1);
+            -moz-box-shadow: 6px 4px 21px 0px rgba(173, 170, 173, 1);
+            box-shadow: 6px 4px 21px 0px rgba(173, 170, 173, 1);
+            border-radius: 20px;
+            background-color: white;
+            color: black;
+            padding: 18px 10px 0;
+            display: flex;
+            align-items: stretch;
+            justify-content: space-between;
+
+            width: 96.5%;
+            align-self: center;
+
+            @include mobile {
+                flex-direction: column;
+                height: 30vh;
+                padding: 20px;
+                margin-top: 100px;
+                padding-bottom: 0px;
+            }
+
+            .left {
+                flex: 1;
+                display: flex;
+                gap: 10px;
+                align-self: center;
+
+                a {
+                    color: #555;
+                }
+            }
+
+            .center {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                padding-top: 40px;
+                margin-top: 19px;
+
+                span {
+                    font-size: 30px;
+                    font-weight: 500;
+                }
+
+                .info {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-around;
+                    color: #555;
+
+                    .item {
+                        display: flex;
+                        align-items: center;
+
+                        span {
+                            font-size: 15px;
+                        }
+                    }
+                }
+
+                button {
+                    background-color: #5271ff;
+                    color: white;
+                    border: none;
+                    border-radius: 9px;
+                    padding: 10px 15px;
+                    cursor: pointer;
+                    font-size: 14px;
+                    font-weight: 400;
+                }
+            }
+
+            .right {
+                flex: 1;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                gap: 10px;
+                color: #555;
+
+            }
+
+        }
+    }
+
+}

@@ -1,0 +1,117 @@
+@import "../../style.scss";
+
+.rightBar {
+    @include mobile{
+        display: none;
+    }
+
+
+
+
+    flex: 3;
+    position: sticky;
+    top: 70px;
+    height: calc(100vh - 90px);
+    overflow: scroll;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    .container {
+        padding: 20px;
+
+        .item {
+            span {
+                color: gray;
+            }
+
+            padding: 15px;
+            margin-bottom: 20px;
+            -webkit-box-shadow: 6px 4px 21px 0px rgba(173, 170, 173, 1);
+            -moz-box-shadow: 6px 4px 21px 0px rgba(173, 170, 173, 1);
+            box-shadow: 6px 4px 21px 0px rgba(173, 170, 173, 1);
+            border-radius: 17px 17px 17px 17px;
+            -moz-border-radius: 17px 17px 17px 17px;
+            -webkit-border-radius: 17px 17px 17px 17px;
+
+            border: 0px none;
+
+            .user {
+                margin: 20px 0px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                .userInfo {
+                    display: flex;
+                    align-items: center;
+                    gap: 7px;
+                    position: relative;
+                    img {
+                        width: 30px;
+                        height: 30px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                    }
+
+                    .online {
+                        width: 9px;
+                        height: 9px;
+                        border-radius: 50%;
+                        background-color: limegreen;
+                        position: absolute;
+                        top: 0;
+                        left: 23px;
+                    }
+
+                    span {
+                        color: black;
+                        font-weight: 500;
+                    }
+
+                }
+
+                .buttons {
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+
+                    button {
+                        color: white;
+                        border: none;
+                        padding: 5px;
+                        cursor: pointer;
+
+                        &:first-child {
+                            background-color: #5271FF;
+
+                        }
+
+                        &:last-child {
+                            background-color: #f0544F;
+                        }
+
+                    }
+
+
+                }
+            }
+
+
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

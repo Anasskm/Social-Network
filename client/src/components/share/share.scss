@@ -1,0 +1,130 @@
+.inputs {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    padding-bottom: 5px;
+    margin: 10px 15px;
+    gap: 10px;
+
+    -webkit-box-shadow: 6px 4px 21px 0px rgba(173, 170, 173, 1);
+    -moz-box-shadow: 6px 4px 21px 0px rgba(173, 170, 173, 1);
+    box-shadow: 6px 4px 21px 0px rgba(173, 170, 173, 1);
+    border-radius: 17px 17px 17px 17px;
+    -moz-border-radius: 17px 17px 17px 17px;
+    -webkit-border-radius: 17px 17px 17px 17px;
+    background-color: white;
+    border: 0px none;
+
+
+    hr {
+
+        margin-top: 10px;
+        border: none;
+        height: 0.5px;
+        background-color: lightgray;
+    }
+
+
+    .top {
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .left {
+            display: flex;
+            flex: 7;
+            gap: 5px;
+
+            img {
+
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+
+            textarea {
+
+                padding: 10px;
+                border: none;
+                color: black;
+                background-color: transparent;
+                outline: none;
+                width: 100%;
+                font-size: 15px;
+                resize: none;
+                margin-right: 0;
+
+
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+
+
+            }
+
+
+        }
+
+        .right {
+            display: flex;
+            flex: 1;
+            justify-content: flex-end;
+           
+
+            .file {
+                width: 100px;
+                height: 100px;
+                object-fit: cover;
+                border-radius: 5px;
+            }
+
+        }
+
+
+
+    }
+
+    .bottom {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 0px;
+
+        label {
+            display: flex;
+            align-items: center;
+            border: none;
+            padding: 10px;
+            border-radius: 10px;
+
+            &:hover {
+                background-color: #FAFAFA
+            }
+
+
+            span {
+                font-size: 15px;
+            }
+        }
+
+        button {
+            border: none;
+            background-color: #5271ff;
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #3852c7;
+            }
+
+            font-size: 15px;
+        }
+
+
+    }
+}
