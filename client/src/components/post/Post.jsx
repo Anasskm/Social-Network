@@ -7,23 +7,40 @@ import FavoriteOutlinedIcon from "@mui/icons-material/FavoriteOutlined";
 import MoreHorizTwoToneIcon from "@mui/icons-material/MoreHorizTwoTone";
 import Comments from "../comments/Comments";
 import moment from "moment";
-import { useQuery } from "react-query";
+import { useQueryClient, useMutation, useQuery } from "react-query";
 import { makeRequest } from "../../axios";
 import { colors } from "@mui/material";
 import { useContext } from "react";
 import { AuthContext } from "../../context/authContext";
 
-const Post = ({ post, isCommentOpen, onToggleComments }) => {
+const Post = ({ postId, post, isCommentOpen, onToggleComments }) => {
   const { currentUser } = useContext(AuthContext);
+  const queryClient = useQueryClient();
+  // fetch likes
 
-  const { isLoading, error, data } = useQuery(["likes", post.id], () =>
-    makeRequest.get("/likes?postId=" + post.id).then((res) => {
+  const { isLoading, error, data } = useQuery(["postlikes", post.id], () =>
+    makeRequest.get("/likes?postId=" + postId).then((res) => {
       return res.data;
     })
   );
+  // add and remove likes
+  const mutation = useMutation(
+    (liked) => {
+      if (liked) {
+        return makeRequest.delete("/likes?postId="+ postId);
+      }
+      return makeRequest.post("/likes", { postId: post.id });
+    },
+    {
+      onSuccess: () => {
+        queryClient.invalidateQueries(["postlikes", postId]);
+      },
+    }
+  );
 
-
- 
+  const handleLike = () => {
+    mutation.mutate(data[0].includes(currentUser.id));
+  };
 
   return (
     <div className="post">
@@ -54,14 +71,16 @@ const Post = ({ post, isCommentOpen, onToggleComments }) => {
           <div className="item">
             {data ? (
               data[0].includes(currentUser.id) ? (
-                <FavoriteOutlinedIcon style={{ color: "red" }} />
+                <FavoriteOutlinedIcon
+                  style={{ color: "red" }}
+                  onClick={handleLike}
+                />
               ) : (
-                <FavoriteBorderOutlinedIcon />
+                <FavoriteBorderOutlinedIcon onClick={handleLike} />
               )
             ) : (
               ""
-            )}	
-
+            )}
             {data ? data[0].length : 0} Likes
           </div>
           <div className="item" onClick={onToggleComments}>

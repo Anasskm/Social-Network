@@ -79,3 +79,45 @@ func GetLikes(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusOK)
 	json.NewEncoder(w).Encode(data)
 }
+
+func AddLikes(w http.ResponseWriter, r *http.Request) {
+	post := struct {
+		PostId int `json:"postId"`
+	}{}
+	if err := json.NewDecoder(r.Body).Decode(&post); err != nil {
+		SendErrorResponse(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+	postId := post.PostId
+	userId, _ := r.Context().Value("userId").(int)
+
+	db := models.DbConn()
+	defer db.Close()
+	query := "INSERT INTO likes (userId,postId) VALUES (?, ?)"
+	if _, err := db.Exec(query, userId, postId); err != nil {
+		SendErrorResponse(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusOK)
+	json.NewEncoder(w).Encode("A like has been added")
+}
+
+func DeleteLikes(w http.ResponseWriter, r *http.Request) {
+	queryParams := r.URL.Query()
+	postId := queryParams.Get("postId")
+	userId, _ := r.Context().Value("userId").(int)
+
+	db := models.DbConn()
+	defer db.Close()
+	query := "DELETE FROM likes WHERE userId = ? AND postId = ? "
+	if _, err := db.Exec(query, userId, postId); err != nil {
+		SendErrorResponse(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusOK)
+	json.NewEncoder(w).Encode("A like has been deleted")
+}

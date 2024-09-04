@@ -50,7 +50,8 @@ const Comments = ({ postId }) => {
     {
       onSuccess: () => {
         queryClient.invalidateQueries(["comments", postId]);
-        queryClient.invalidateQueries(["likes", postId]);
+        queryClient.invalidateQueries(["comlikes", postId]);
+        queryClient.invalidateQueries(["postlikes", postId]);
       },
     }
   );

@@ -43,7 +43,7 @@ const Posts = () => {
         data.map((post) => (
           <Post
             post={post}
-            key={post.id}
+            postId={post.id}
             isCommentOpen={openComments[post.id] || false} // to see
             onToggleComments={() => toggleComments(post.id)}
           />
