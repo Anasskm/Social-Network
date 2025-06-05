@@ -36,10 +36,11 @@ func Upload(w http.ResponseWriter, r *http.Request) {
 	}
 	// Create file on server
 	fileName := fmt.Sprintf(currentDateTime + header.Filename)
-	filePath := filepath.Join("../../client/public/uploads", fileName)
+	filePath := filepath.Join("/home/student/anass_git/social-network/client/public/uploads", fileName)
 
 	dst, err := os.Create(filePath)
 	if err != nil {
+		fmt.Println("-------------------------------", err)
 		SendErrorResponse(w, err.Error(), http.StatusInternalServerError)
 		return
 	}

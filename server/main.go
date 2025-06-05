@@ -14,6 +14,7 @@ import (
 
 func main() {
 	mux := http.NewServeMux()
+
 	InfoLog := log.New(os.Stdout, "INFO\t", log.Ldate|log.Ltime)
 
 	// CORS middleware setup
