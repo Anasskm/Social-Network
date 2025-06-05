@@ -1,0 +1,421 @@
+Dossier Professionnel 
+– 
+RNCP37873 
+Concepteur développeur d'applications 
+Zone 01 Rouen Normandie 
+Campus Saint Marc
+24 place Saint Marc,76000 Rouen 
+02 32 10 25 10 https://zone01rouennormandie.org/Juin 2025
+Rouen
+Anass El karoumi
+
+
+
+
+
+Introduction
+     Dans le cadre de la certification TP - Concepteur Développeur d'Applications
+(RNCP37873 – Niveau 6), ce dossier présente deux projets distincts permettant de
+couvrir l’ensemble des blocs de compétences définis dans le référentiel.
+    Le choix de présenter deux projets distincts s'inscrit dans une volonté de
+démontrer de façon exhaustive les compétences acquises à travers des expériences
+variées, complémentaires et concrètes.      
+4        Le second projet, quant à lui, a été réalisé dans un cadre pédagogique à Zone01 Rouen.
+Cette expérience complémentaire m’a permis de maîtriser des aspects techniques tels que la
+gestion en temps réel d’une application et les processus de déploiement avec Docker. En Français :
+       Le premier projet a été mené lors d’un stage professionnel au sein de l’entreprise
+Figure de Skills. Ce contexte m’a permis de travailler sur des problématiques réelles
+d’une entreprise active dans l'accompagnement et la formation, me permettant
+notamment de développer des compétences en analyse des besoins, conception
+d'interfaces ergonomiques, et structuration rigoureuse des données via la méthode
+Merise.
+       L’ensemble des compétences du référentiel RNCP37873 a ainsi pu être démontré grâce
+à la complémentarité de ces deux projets.
+In English :
+   In the framework of the TP certification - Application Designer and Developer
+(RNCP37873 - Level 6), this report proposes two separate projects that cumulatively
+address all the skill areas defined in the official reference framework.
+     The decision to present two distinct projects is a reaction to the need to best
+represent the skills developed by varied, complementary, and applied experience.
+      The first project was developed within the framework of a professional internship in
+the Figure de Skills company. This framework enabled me to tackle actual problems of a
+company specialized in training and support. It enabled me to acquire competencies in
+needs analysis, ergonomic interface design, and strict structuring of data based on the
+Merise methodology.
+     The second project was done in an educational environment in Zone01 Rouen. The
+complementary experience helped me gain mastery over technical elements like real-time
+application management and deployment processes with Docker.
+       With these two complementary projects, I was able to exhibit all the competencies defined in the
+RNCP37873 reference framework.
+
+5Projet 1 — Application de gestion de projets pour
+Figure de Skills (Stage)
+        Ce projet a été réalisé dans le cadre d’un stage de deux mois chez Figure de Skills, une
+entreprise spécialisée dans l’accompagnement et le développement des projets . Durant ce
+stage, nous avons suivi une méthodologie agile, organisée en sprints courts avec des
+réunions régulières permettant une adaptation constante aux besoins utilisateurs et une
+validation incrémentale des fonctionnalités développées. Le besoin principal était de
+concevoir une application web interne pour remplacer les nombreux fichiers Excel utilisés
+pour le suivi de projets, le pilotage des activités et la répartition des tâches. Le cahier des
+charges du projet, détaillant précisément les besoins fonctionnels et techniques, a été établi
+en collaboration avec l'entreprise et validé régulièrement pour assurer une adéquation
+constante avec les attentes métiers et les évolutions nécessaires.
+Cahier des charges
+Objectifs généraux du projet :
+      L'objectif du projet est de développer une application web servant à la fois de guide et
+d'outil de gestion de projet. Cette plateforme vise à optimiser le temps de travail et à
+fluidifier l'organisation ainsi que le suivi des projets pour les clients de Figure De Skills
+(F2S). Elle offrira une gestion simplifiée des projets en intégrant des fonctionnalités
+avancées de collaboration et d'automatisation. 
+Contexte et Problématique Actuelle :
+ Description des outils actuels  :
+       Actuellement, le système en place repose sur plusieurs outils de gestion sous forme de
+tableaux Excel permettant le suivi des différentes informations stratégiques et
+opérationnelles. Ces bases ont été mises en place progressivement et enrichies au fil des
+années afin de répondre aux besoins croissants des utilisateurs. 
+Ces outils permettent notamment de : 
+Centraliser les données essentielles à la gestion des activités, 
+Assurer le suivi des opérations et des projets en cours, 
+Générer des rapports et tableaux de bord facilitant la prise de décision. 
+Limites et contraintes rencontrées :
+        Cependant, l'utilisation de ces outils présente plusieurs limites : 
+
+6Performance : Avec l’augmentation du volume de données, les fichiers Excel
+deviennent de plus en plus lourds, entraînant des lenteurs lors de la saisie,
+et complique l’accès aux informations et ralentit le travail quotidien. 
+Ergonomie : L’interface et l’organisation des fichiers ne sont pas optimisées
+pour une utilisation intuitive. La saisie des informations peut s’avérer
+fastidieuse et peu adaptée aux besoins des utilisateurs finaux. 
+Collaboration : Les outils actuels ne permettent pas une collaboration
+efficace en temps réel, ce qui entraîne des problèmes de versionnage et de
+synchronisation des données entre plusieurs intervenants. 
+Sécurité : La protection des données n’est pas toujours optimale, ce qui
+expose le système aux risques d’accès non autorisé ou de perte
+d’informations critiques. 
+Évolutivité : L’ajout de nouvelles fonctionnalités ou l’adaptation des outils
+existants aux nouveaux besoins métier s’avère complexe et nécessite des
+interventions techniques lourdes. 
+          Ces limitations rendent nécessaire la mise en place d’un nouveau
+système plus performant, ergonomique et sécurisé afin d’optimiser la gestion
+des données et d’améliorer l’expérience des utilisateurs. 
+Objectifs du Nouveau Logiciel :
+Remplacement des tableaux Excel 
+    Le nouveau logiciel remplacera les fichiers Excel actuellement utilisés par
+les employés pour la saisie et la gestion des données, offrant ainsi une solution
+centralisée, plus fiable et mieux adaptée aux besoins métiers.
+ 
+Amélioration des performances et de la gestion des données 
+     Le logiciel devra permettre une saisie plus fluide et rapide des informations,
+sans les lenteurs actuelles liées à la lourdeur des fichiers Excel. Il devra
+également intégrer des mécanismes de validation des données, limiter les
+risques d’erreur et offrir une gestion différenciée des accès selon les profils
+utilisateurs (super-admins, admins, contributeurs, responsables). 
+Optimisation de l’ergonomie et de l’expérience utilisateur 
+     L’interface devra être intuitive et adaptée aux différents types d’utilisateurs
+afin de simplifier la saisie et la consultation des données. L’objectif est de
+réduire la complexité des tâches courantes, notamment en facilitant la gestion
+des statuts et des échéances. 
+Renforcement de la collaboration et de la sécurité 
+   La solution devra permettre un travail collaboratif en temps réel, évitant
+ainsi les problèmes de versionnage et de synchronisation des données. Elle
+devra également garantir une sécurité renforcée, avec des contrôles d’accès
+stricts et des mécanismes de sauvegarde automatique pour éviter toute perte
+d’information. 
+
+7Évolutivité et intégration avec d’autres systèmes 
+     Le logiciel devra être flexible et évolutif pour répondre aux besoins futurs.
+Il devra notamment offrir des possibilités d’intégration avec d’autres systèmes
+et bases de données, permettant une meilleure interopérabilité et une
+exploitation optimisée des données. 
+Gestion et saisie des données : Permettre aux employés de renseigner et
+modifier les informations de manière fluide, en garantissant la cohérence et
+la validation des données. 
+Organisation et structuration des fichiers : Offrir une hiérarchisation claire
+des données, avec une arborescence intuitive pour retrouver facilement les
+informations. (IDEATION, CONCEPTION, PILOTING, REPORTING) 
+Gestion des accès et des profils utilisateurs : Définir plusieurs niveaux
+d’accès (administrateurs, contributeurs, consulteurs) afin de sécuriser les
+informations et limiter les erreurs de manipulation. 
+Mise à jour et synchronisation des données : Assurer une actualisation
+automatique des informations pour éviter les doublons et les versions
+obsolètes. 
+Automatisation des processus : Réduire les tâches répétitives en intégrant
+des outils facilitant l’édition et la mise en forme des données. 
+Interface utilisateur : L’interface devra être ergonomique et adaptée aux
+différents profils d’utilisateurs. L’objectif est d’améliorer l’expérience de
+saisie et de consultation, notamment en simplifiant les manipulations et en
+intégrant des outils d’assistance à la saisie. 
+Reporting et export de données : L’application devra proposer des
+fonctionnalités avancées de reporting, avec la possibilité d’exporter les
+données sous divers formats standardisés (CSV, JSON, PDF). Ces exports
+devront être compatibles avec les outils de gestion existants et permettre
+une synchronisation fluide avec d'autres systèmes via API. 
+Sécurité et gestion des droits : Une attention particulière devra être portée à
+la sécurisation des données, avec des contrôles d’accès rigoureux et des
+mécanismes de sauvegarde pour prévenir toute perte d’informations. Description Fonctionnelle du Besoin :
+
+8   Scalabilité :
+Architecture scalable : Conception de la base de données et de l'architecture
+du système pour supporter un grand nombre d'utilisateurs simultanés. 
+Optimisation des performances : Optimisation des requêtes et des processus
+pour garantir des performances élevées même en cas de forte affluence.
+   Compatibilité :
+Support multiplateforme : Support des principaux navigateurs web
+(Chrome, Firefox, Safari, Edge) et compatibilité avec différents systèmes
+d'exploitation (Windows, macOS, Linux, iOS, Android).
+   Maintenance et Évolution :
+Documentation : Un code source bien documenté pour faciliter la
+maintenance et les mises à jour. 
+Évolutivité : Possibilité d'ajouter de nouvelles fonctionnalités selon les
+besoins futurs des utilisateurs, avec une architecture modulaire et évolutive.    Sécurité :
+ Protection des données : Utilisation de protocoles de sécurité (TLS) pour
+protéger les données des utilisateurs et cryptage des mots de passe. 
+Prévention des attaques : Protection contre les attaques courantes telles que
+l'injection SQL*, le cross-site scripting* (XSS) et le cross-site request
+forgery* (CSRF).Contraintes techniques et fonctionnelles :
+
+9Conception
+   L'organisation adoptée pour le projet chez Figure de Skills a suivi une
+méthodologie agile, structurée en plusieurs sprints de courte durée (environ
+deux semaines chacun). Chaque sprint incluait les éléments suivants :
+Planification des tâches : Établissement des priorités en fonction des
+besoins utilisateurs et des objectifs métier.
+Développement collaboratif : Travail en binôme avec une répartition claire
+des rôles ; j'étais responsable des user stories, de la modélisation des
+données (méthode Merise) et des aspects techniques liés à l'architecture de
+la base de données, tandis que mon collègue gérait la création des
+maquettes UI/UX sur Figma.
+Validation régulière : Présentation des fonctionnalités développées à la fin
+de chaque sprint afin d'obtenir des retours immédiats et ajuster le projet en
+conséquence.
+Réunions de rétrospective : Identification des points forts et des axes
+d’amélioration pour le sprint suivant, permettant une amélioration
+continue du processus de travail et une adaptation efficace aux attentes du
+client.Organisation du projet :
+User Stories :
+    Dans le cadre du projet chez Figure de Skills, j'ai élaboré les user stories
+pour formaliser clairement les besoins des utilisateurs. Chaque user story était
+rédigée sous la forme : "En tant que [type d'utilisateur], je veux [fonctionnalité]
+afin de [objectif]", permettant ainsi une meilleure compréhension et une
+priorisation claire des développements.
+
+1 0Maquettes :
+Création d'un Wireframe :
+    En collaboration avec mon binôme, nous avons réalisé des wireframes pour
+structurer visuellement les parcours utilisateur et les fonctionnalités clés de
+l'application. Ces wireframes ont été créés initialement pour valider la
+navigation et l'ergonomie générale avant la création des maquettes détaillées.
+     Plusieurs versions du wireframe ont été imaginées et explorées. Chacune de
+ces versions a été examinée et modifiée en fonction des retours et des
+suggestions de l'équipe Figure de Skills , jusqu'à ce que nous parvenions à une
+version finale qui répondait à nos exigences en termes de fonctionnalité et
+d'ergonomie.
+
+1 1Création d'une Maquette :
+    Une fois les wireframes validés, la phase suivante a consisté à produire la
+maquette graphique de l’application. Cette étape visait à représenter
+visuellement l’apparence finale de l’interface, en intégrant les couleurs, les
+typographies, les icônes et les composants graphiques cohérents avec l’identité
+de Figure de Skills.
+    La maquette a été conçue par mon binôme en utilisant Figma, un outil
+collaboratif adapté à la conception UI/UX. L’utilisation de Figma a permis de
+tirer parti de fonctionnalités telles que la bibliothèque de composants,
+garantissant une cohérence graphique sur l’ensemble des pages (boutons,
+champs de saisie, entêtes, tableaux, etc.)
+
+1 2      Ce système de composants réutilisables a offert un gain de temps significatif et a
+facilité les ajustements graphiques au fil des retours utilisateurs. Les pages de connexion,
+de création de projet, de gestion d’équipe, ou encore les dashboards ont ainsi été déclinées
+de manière homogène et professionnelle. en maquettes interactives sous Figma par mon
+collègue. Ces maquettes détaillées présentaient une interface visuelle claire et intuitive,
+respectant les bonnes pratiques ergonomiques et les exigences RGAA (accessibilité).
+
+1 3Création d’un prototype intéractif :
+    Après la validation des maquettes, nous avons entamé la phase de prototypage de
+l'application. Cette étape avait pour but de simuler l'expérience utilisateur en recréant les
+interactions principales de l'application sans encore passer par l'étape de développement
+technique.
+      Le prototypage a été réalisé à l’aide de Figma, qui propose un mode dédié pour relier
+les différentes maquettes entre elles à travers des liens interactifs. Nous avons ainsi
+connecté les pages entre elles, ajouté des animations de transition et simulé les parcours
+utilisateur attendus, tels que la création d’un projet, la navigation dans les tableaux de bord
+ou encore la gestion des utilisateurs.
+
+1 4Dictionnaire de données :
+       Le dictionnaire de données détaille les éléments de données utilisés dans notre système
+d'information, en particulier la base de données. Il sert de référence pour les développeurs,
+les administrateurs de base de données et les autres parties prenantes, en fournissant une
+description complète et précise des données. Il fournit une vue complète des tables et de
+leurs attributs. Il précise quels sont les attributs uniques (ex : email) et les relations entre les
+tables via les notions de clé primaire et clé étrangère.
+     Ce dictionnaire a d'abord été établi avec les entités principales comme users, projects,
+tasks, clients, etc. Ensuite, il a été affiné à l’aide de la méthode Merise décrite ci-après.
+Vous voyez ici la version finale et détaillée. 
+
+
+1 5Réalisation des Modèles de Données, inspirés de la méthode
+Merise :
+      Pour la conception des modèles de données, nous avons adopté une approche inspirée
+de la méthode Merise, méthodologie française de conception et de modélisation des
+systèmes d'information. Cette méthode structurée nous a permis d'aborder la modélisation
+selon différents niveaux d'abstraction, en partant des besoins métier pour aboutir à une
+implémentation technique.
+Le Modèle Conceptuel de Données (MCD) :
+      Le Modèle Conceptuel de Données (MCD) présenté illustre l'architecture de données
+de l'application. Ce modèle met en évidence les entités principales du système, leurs
+attributs, ainsi que les relations entre ces entités, formant ainsi une représentation
+structurée de l'organisation des informations au sein de l'application.
+
+
+1 6Structure du MCD : 
+      Le MCD s'articule autour de dix entités fondamentales (représentées en jaune) qui
+constituent le cœur fonctionnel du système :
+1.User : Représente les utilisateurs de la plateforme avec leurs informations
+d'identification (id_user, username, email, password) et données personnelles
+(firstname, lastname).
+2.Client : Stocke les informations relatives aux clients pour lesquels des projets sont
+réalisés, incluant leur type et une description.
+3.Role : Définit les différents rôles pouvant être attribués aux utilisateurs dans le système
+(administrateur, gestionnaire, etc.).
+4.Permission : Établit les droits d'accès spécifiques associés aux rôles.
+5.Project : Élément central du système, contenant les informations de base d'un projet,
+son état d'avancement et ses caractéristiques temporelles.
+6.Action : Représente les actions principales composant un projet.
+7.SubAction : Constitue les sous-composantes d'une action, permettant une granularité
+plus fine dans la gestion des tâches.
+8.Deliverable : Documente les livrables associés aux sous-actions.
+9.Budget : Gère les aspects financiers liés aux sous-actions avec des données détaillées
+(catégorie, nature, quantité, coût unitaire, etc.).
+10.Task : Définit les tâches spécifiques à réaliser dans le cadre des sous-actions.
+Relations et cardinalités :
+        Le modèle intègre plusieurs relations clés (représentées en bleu clair) qui établissent les
+liens entre les entités :
+La relation MANAGER établit qu'un utilisateur (User) peut gérer plusieurs projets
+(Project), avec une cardinalité 1,1 côté User et 0,n côté Project, indiquant qu'un
+utilisateur peut gérer plusieurs projets mais qu'un projet est géré par un seul utilisateur.
+La relation SUPERVISER indique qu'un utilisateur peut piloter plusieurs sous-
+actions, avec une relation 1,1 à 0,n.
+Les relations POSSEDER et AUTORISER définissent respectivement l'attribution de
+rôles aux utilisateurs et de permissions aux rôles, avec des cardinalités 0,n à 0,n,
+représentant des associations de type many-to-many.
+La relation APPARTENIR relie les utilisateurs aux clients, permettant d'identifier les
+équipes associées à chaque client.
+La hiérarchie des éléments de projet est structurée par les relations COMPORTER,
+SUBDIVISER, GENERER, NECESSITER et IMPLIQUER, établissant une
+décomposition logique du projet en actions, sous-actions, livrables, budgets et tâches.
+
+1 7Analyse fonctionnelle :
+   Ce MCD traduit une architecture orientée gestion de projet avec plusieurs niveaux
+d'abstraction :
+1. Gestion des accès et des utilisateurs : Le système établit une hiérarchie claire des droits
+à travers les entités User, Role et Permission, permettant une gestion fine des accès.
+2. Organisation client-projet : L'application permet d'associer des projets à des clients
+spécifiques tout en maintenant une traçabilité des intervenants.
+3. Décomposition hiérarchique des projets : Un système de décomposition à plusieurs
+niveaux (Projet > Actions > Sous-actions > Tâches) permet une gestion détaillée des
+projets.
+4. Suivi des ressources : Les aspects financiers (Budget) et les livrables (Deliverable) sont
+directement rattachés aux sous-actions, facilitant le suivi des ressources et des
+productions.
+Conclusion:
+     Le Modèle Conceptuel de Données présente une structure robuste et complète pour la
+gestion de projets. Sa conception répond aux besoins de traçabilité, de hiérarchisation des
+tâches et de gestion des droits utilisateurs. La richesse des relations entre entités permet
+une grande flexibilité dans l'exploitation des données, tout en maintenant l'intégrité des
+informations grâce à des cardinalités bien définies.
+   Ce modèle constitue une base solide pour l'implémentation d'une base de données
+relationnelle efficace, capable de supporter l'ensemble des fonctionnalités nécessaires à une
+application professionnelle de gestion de projets.
+Le Modèle Logique de Données (MLD) :
+     Le Modèle Logique de Données (MLD) présente une organisation relationnelle
+complète basée sur la méthode Merise. Ce modèle traduit les entités conceptuelles du
+MCD en tables structurées avec leurs attributs typés et leurs contraintes d'intégrité. 
+
+1 8Caractéristiques principales du MLD :
+1. Tables et attributs : 
+      Le MLD comprend 14 tables principales, chacune représentant soit une entité du
+MCD, soit une relation de type plusieurs-à-plusieurs matérialisée en table de liaison :
+Tables principales : User, Client, Role, Permission, Project, Action, SubAction,
+Deliverable, Budget, Task
+Tables de liaison : UserRole, ClientUserRole, RolePermission, TaskAssignment
+Chaque attribut est précisément défini avec :
+Son type de données (Int, String, Boolean, DateTime, Decimal, etc.)
+Sa contrainte d'intégrité entre parenthèses (PK pour Primary Key, FK pour Foreign
+Key, UNIQUE)
+Son caractère optionnel indiqué par un point d'interrogation (?)
+2. Relations entre tables :
+    Les relations entre les tables sont représentées par des flèches bidirectionnelles (<-->)
+pour les associations plusieurs-à-plusieurs et des flèches unidirectionnelles (-->) pour les
+associations un-à-plusieurs. Cette représentation met en évidence le sens des dépendances
+fonctionnelles entre les entités.
+3. Transformations spécifiques des relations :
+Le MLD a adapté certaines relations importantes :
+User vers Project : La relation est désormais orientée de User vers Project, indiquant
+que les utilisateurs sont responsables des projets (et non l'inverse)
+Suppression de la relation directe Client-Project : La relation directe entre Client et
+Project a été retirée pour éviter la redondance, car cette relation est déjà implicitement
+gérée via les autres associations
+Positionnement des entités Task et TaskAssignment : Ces entités ont été repositionnées
+dans le modèle pour une meilleure lisibilité et organisation logique
+4. Gestion des contraintes d'intégrité :
+Le modèle gère clairement les contraintes d'intégrité à travers :
+Les clés primaires (PK) qui garantissent l'unicité de chaque enregistrement
+Les clés primaires composites pour les tables de liaison (ex: UserId + RoleId dans
+UserRole)
+Les clés étrangères (FK) qui assurent l'intégrité référentielle
+Les contraintes d'unicité (UNIQUE) sur certains attributs comme username et email
+5. Hiérarchie des données :
+Le MLD reflète fidèlement la hiérarchie organisationnelle du domaine métier :
+Structure hiérarchique des projets (Project →  Action →  SubAction)
+Organisation des ressources liées aux sous-actions (SubAction →  Task, SubAction →
+Budget, SubAction →  Deliverable)
+Gestion des permissions par rôles (Role →  RolePermission →  Permission)
+Assignation des utilisateurs aux clients (User →  ClientUserRole →  Client)
+
+1 9
+Conclusion:
+Le Modèle Logique de Données (MLD) constitue une traduction efficace et rigoureuse du
+MCD vers une structure relationnelle implémentable. Les modifications apportées à la
+direction des relations et à l'organisation des entités renforcent la clarté du modèle tout en
+préservant son intégrité fonctionnelle. La précision des types de données et des contraintes
+d'intégrité garantit une base solide pour l'implémentation physique dans le système de
+gestion de base de données.
+     Pour mettre en œuvre ces modèles, nous avons choisi PlantUML, un outil permettant
+de créer des diagrammes à partir d'un langage textuel simple :
+1.Avantages de PlantUML :
+Format textuel versionnable dans Git, facilitant le suivi des modifications
+Syntaxe intuitive et expressive
+Possibilité de générer des diagrammes visuellement professionnels
+Intégration facile dans la documentation technique
+2.Processus de modélisation :
+Rédaction des fichiers .puml décrivant les entités, leurs attributs et relations
+Génération automatique des diagrammes visuels
+Itérations successives pour affiner le modèle en fonction des retours d'expérience et
+des évolutions du cahier des charges
+3.Personnalisation visuelle :
+Utilisation de codes couleur pour distinguer visuellement les entités (jaune) des
+associations (bleu clair)
+Mise en forme adaptée aux standards de la méthode Merise
+Orientation horizontale du diagramme pour améliorer la lisibilité
+
+2 0Le Modèle Physique de Données(MPD) :
+      Le Modèle Physique de Données (MPD) est la traduction technique du MLD en script
+SQL exécutable. Il comprend 14 tables qui matérialisent les entités et relations du modèle
+conceptuel, avec leurs types de données, contraintes d'intégrité et index pour optimiser les
+performances.
+Le script SQL généré :
+Crée les tables principales (User, Client, Project, etc.) et les tables de liaison
+Définit les types de données adaptés à chaque attribut
+Établit les contraintes de clés primaires et étrangères
+Configure les règles de suppression (CASCADE, RESTRICT, SET NULL)
+Ajoute des index sur les clés étrangères pour optimiser les performances
+Cette structure de base de données relationnelle, conçue pour PostgreSQL, respecte les
+bonnes pratiques de modélisation et offre une base solide pour le développement de
+l'application F2S.
+
+
+2 1
+
+
+2 2
+

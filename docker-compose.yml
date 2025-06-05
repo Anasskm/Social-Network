@@ -1,0 +1,62 @@
+version: '3.8'
+
+services:
+  # Service de base de données MySQL
+  database:
+    image: mysql:8.0
+    container_name: social-network-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: social_network
+      MYSQL_USER: social_user
+      MYSQL_PASSWORD: social_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./server/db/database.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - social-network
+
+  # Service backend (Go)
+  backend:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: social-network-backend
+    restart: always
+    depends_on:
+      - database
+    ports:
+      - "8080:8080"
+    environment:
+      - DB_HOST=database
+      - DB_PORT=3306
+      - DB_USER=social_user
+      - DB_PASSWORD=social_password
+      - DB_NAME=social_network
+      - JWT_SECRET=my_secret_key
+    networks:
+      - social-network
+
+  # Service frontend (React)
+  frontend:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    container_name: social-network-frontend
+    restart: always
+    depends_on:
+      - backend
+    ports:
+      - "80:80"
+    networks:
+      - social-network
+
+networks:
+  social-network:
+    driver: bridge
+
+volumes:
+  mysql-data:
